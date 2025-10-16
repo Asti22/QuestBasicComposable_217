@@ -12,10 +12,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.layout.ContentScale
@@ -29,7 +31,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun TataletakColumn(modifier: Modifier ) {
-    Column(modifier = modifier.padding(top = 50.dp)) {
+    Column(modifier = modifier.padding(top = 20.dp)) {
         Text(text = "Komponen1")
         Text(text = "Komponen2")
         Text(text = "Komponen3")
@@ -105,10 +107,11 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
         Box(
             modifier = modifier
                 .fillMaxWidth()
-                .height(height = 110.dp)
-                .background(color = Color.Yellow),
+                .height(300.dp)
+                .background(Color.Cyan, shape = RoundedCornerShape(16.dp))
+                .shadow(8.dp, RoundedCornerShape(16.dp))
+                .padding(10.dp),
             contentAlignment = Alignment.Center
-
         ){
             Column (){
                 Row (
