@@ -19,10 +19,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.LineHeightStyle
@@ -152,14 +155,22 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                     .clip(RoundedCornerShape(16.dp))
             )
 
-            Text(text = "My Music",
+            Text(
+                text = "My Music",
                 fontSize = 50.sp,
                 color = Color.Red,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.Cursive,
-                modifier= Modifier.align (
-                    alignment = Alignment.Center)
-                )
+                style = TextStyle(
+                    shadow = Shadow(
+                        color = Color.Black.copy(alpha = 0.3f),
+                        offset = Offset(4f, 4f),
+                        blurRadius = 6f
+                    )
+                ),
+                modifier = Modifier.align(Alignment.Center)
+            )
+
         }
 
 
