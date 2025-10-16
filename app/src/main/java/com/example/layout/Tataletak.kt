@@ -17,6 +17,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.motionEventSpy
@@ -141,9 +142,16 @@ fun TataletakBoxColumnRow(modifier: Modifier) {
                 .background(color = Color.Cyan),
             contentAlignment = Alignment.Center
         ){
-            Image(painter = gambar,
+            Image(
+                painter = gambar,
                 contentDescription = null,
-                contentScale = ContentScale.Fit)
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(250.dp)
+                    .clip(RoundedCornerShape(16.dp))
+            )
+
             Text(text = "My Music",
                 fontSize = 50.sp,
                 color = Color.Red,
